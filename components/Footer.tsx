@@ -2,14 +2,14 @@ import Link from "next/link";
 import { SITE } from "@/lib/site";
 
 export function CardMarks({ size = "sm" }: { size?: "sm" | "lg" }) {
-  const h = size === "lg" ? 30 : 26;
+  const h = size === "lg" ? 20 : 17;
   return (
-    <div className="flex items-center gap-2" aria-label="Accepted payment: Visa and Mastercard">
-      <span className="flex items-center rounded-md border border-slate-200 bg-white px-2.5 py-1.5">
+    <div className="flex items-center gap-1.5" aria-label="Accepted payment: Visa and Mastercard">
+      <span className="flex items-center rounded border border-slate-200 bg-white px-1.5 py-1">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/images/payments/visa.png" alt="Visa" height={h} width={Math.round((h * 368) / 120)} style={{ height: h, width: "auto" }} />
       </span>
-      <span className="flex items-center rounded-md border border-slate-200 bg-white px-2.5 py-1.5">
+      <span className="flex items-center rounded border border-slate-200 bg-white px-1.5 py-1">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/images/payments/mastercard.png" alt="Mastercard" height={h} width={Math.round((h * 192) / 120)} style={{ height: h, width: "auto" }} />
       </span>
