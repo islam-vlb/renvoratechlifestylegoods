@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --volt: #1747ff; --lime: #b8ff2c; --ink: #0a1020; }
+
+html { scroll-behavior: smooth; }
+body {
+  background: #f6f8fc;
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  background-image:
+    radial-gradient(900px 500px at 90% -10%, rgba(23,71,255,0.10), transparent 60%),
+    radial-gradient(700px 400px at -10% 30%, rgba(184,255,44,0.14), transparent 60%);
+  background-attachment: fixed;
+}
+h1, h2, h3, h4 { font-family: var(--font-display), system-ui, sans-serif; letter-spacing: -0.02em; }
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-7xl px-5 sm:px-8; }
+  .section { @apply py-16 sm:py-24; }
+  .eyebrow { @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-volt; }
+  .eyebrow::before { content: ""; @apply h-2 w-2 rounded-full bg-lime; box-shadow: 0 0 10px var(--lime); }
+  .h-section { @apply font-display text-3xl font-bold leading-tight sm:text-5xl; }
+  .glass {
+    @apply rounded-3xl border border-white/80 bg-white/60 backdrop-blur-xl;
+    box-shadow: 0 10px 40px -18px rgba(23, 71, 255, 0.25), inset 0 1px 0 rgba(255,255,255,0.9);
+    transition: border-color .25s, box-shadow .25s, transform .25s;
+  }
+  .neon:hover {
+    border-color: var(--volt);
+    box-shadow: 0 0 0 1px var(--volt), 0 0 28px -4px rgba(23,71,255,0.45), 0 0 18px -6px rgba(184,255,44,0.8);
+    transform: translateY(-3px);
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-volt px-6 py-3 text-sm font-bold text-white transition disabled:cursor-not-allowed disabled:opacity-40;
+    box-shadow: 0 8px 24px -8px rgba(23,71,255,0.7);
+  }
+  .btn:hover:not(:disabled) { box-shadow: 0 0 0 3px rgba(184,255,44,0.9), 0 8px 24px -6px rgba(23,71,255,0.8); }
+  .btn-lime { @apply inline-flex items-center justify-center gap-2 rounded-full bg-lime px-6 py-3 text-sm font-bold text-ink transition hover:brightness-95; }
+  .btn-ghost { @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-white/70 px-6 py-3 text-sm font-bold text-ink transition hover:border-volt hover:text-volt; }
+  .field { @apply w-full rounded-xl border border-ink/15 bg-white/80 px-4 py-3 text-sm outline-none transition focus:border-volt focus:ring-2 focus:ring-volt/20; }
+  .label { @apply mb-1.5 block text-xs font-bold uppercase tracking-wider text-slate2; }
+  .prose-legal h2 { @apply mt-10 font-display text-2xl font-bold; }
+  .prose-legal p, .prose-legal li { @apply mt-3 leading-relaxed text-slate2; }
+  .prose-legal ul { @apply list-disc pl-6; }
+  .prose-legal a { @apply font-semibold text-volt underline; }
+}
