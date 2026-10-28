@@ -9,10 +9,9 @@ export function CardMarks({ size = "sm" }: { size?: "sm" | "lg" }) {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/images/payments/visa.png" alt="Visa" height={h} width={Math.round((h * 368) / 120)} style={{ height: h, width: "auto" }} />
       </span>
-      <span className="flex items-center gap-2 rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-sm font-bold text-ink">
+      <span className="flex items-center rounded-md border border-slate-200 bg-white px-2.5 py-1.5">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/images/payments/mastercard.png" alt="Mastercard" height={h} width={Math.round((h * 192) / 120)} style={{ height: h, width: "auto" }} />
-        Mastercard
       </span>
     </div>
   );
