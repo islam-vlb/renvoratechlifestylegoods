@@ -89,7 +89,7 @@ export default function CheckoutPage() {
           <section className="glass p-6">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <h2 className="font-display text-xl font-bold">Payment</h2>
-              <div className="rounded-lg bg-ink p-2"><CardMarks /></div>
+              <CardMarks size="lg" />
             </div>
             <p className="mt-2 text-sm text-slate2">We accept Visa and Mastercard.</p>
             <div className="mt-4 grid gap-4 sm:grid-cols-3">

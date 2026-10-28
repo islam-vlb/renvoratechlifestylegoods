@@ -1,15 +1,17 @@
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 
-export function CardMarks() {
+export function CardMarks({ size = "sm" }: { size?: "sm" | "lg" }) {
+  const h = size === "lg" ? 30 : 26;
   return (
     <div className="flex items-center gap-2" aria-label="Accepted payment: Visa and Mastercard">
-      <span className="rounded-md border border-white/30 bg-white px-3 py-1 text-sm font-extrabold italic tracking-wide text-[#1a1f71]">VISA</span>
-      <span className="flex items-center gap-2 rounded-md border border-white/30 bg-white px-3 py-1 text-sm font-bold text-ink">
-        <span className="relative inline-block h-4 w-6">
-          <span className="absolute left-0 h-4 w-4 rounded-full bg-[#eb001b]" />
-          <span className="absolute left-2 h-4 w-4 rounded-full bg-[#f79e1b] opacity-90" />
-        </span>
+      <span className="flex items-center rounded-md border border-slate-200 bg-white px-2.5 py-1.5">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/payments/visa.png" alt="Visa" height={h} width={Math.round((h * 368) / 120)} style={{ height: h, width: "auto" }} />
+      </span>
+      <span className="flex items-center gap-2 rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-sm font-bold text-ink">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/payments/mastercard.png" alt="Mastercard" height={h} width={Math.round((h * 192) / 120)} style={{ height: h, width: "auto" }} />
         Mastercard
       </span>
     </div>
