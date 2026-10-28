@@ -5,6 +5,7 @@
 :root { --volt: #1747ff; --lime: #b8ff2c; --ink: #0a1020; }
 
 html { scroll-behavior: smooth; }
+html, body { overflow-x: clip; }
 body {
   background: #f6f8fc;
   color: var(--ink);
